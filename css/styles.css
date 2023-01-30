@@ -133,16 +133,35 @@ img {
 .site-nav > li:not(:last-child) {
   margin-right: 50px;
 }
+.nav-item {
+  display: flex;
+  position: relative;
+}
+.current::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translateY(25%);
+  height: 4px;
+  width: 100%;
+  background: var(--accent-color);
+  border-radius: 2px;
+}
+
 .current,
 .site {
   padding-top: 32px;
   padding-bottom: 32px;
-
-  color: var(--primary-text-color);
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+
+  color: var(--primary-text-color);
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-contacts {
   display: flex;
@@ -159,23 +178,32 @@ img {
   font-size: 14px;
   line-height: 1.14;
   text-decoration: none;
+
   color: var(--secondary-text-color);
   letter-spacing: 0.02em;
   align-items: center;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .icon {
   fill: currentColor;
   /* fill:#757575; */
   margin-right: 10px;
+  padding: 0;
+  margin-bottom: 0;
   /* align-items: center; */
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .icon:hover,
 .icon:focus {
   fill: var(--accent-color);
 }
-.current,
-.site-link :hover,
-.site-link :focus,
+.current:hover,
+.current:focus,
+.site:hover,
+.site:focus,
 .header-contact:hover,
 .header-contact:focus {
   color: var(--accent-color);
@@ -183,6 +211,9 @@ img {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Стилізація героя */
@@ -211,17 +242,20 @@ img {
 }
 .hero-button {
   padding: 10px 32px;
-  border-radius: 4px;
-  border: none;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  background-color: var(--accent-color);
+  color: var(--white-text-color);
   font-weight: 700;
   font-size: 16px;
   line-height: 1.88;
   letter-spacing: 0.06em;
   font-family: inherit;
   cursor: pointer;
-  background-color: var(--accent-color);
-  color: var(--white-text-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: none;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .hero-button:hover,
 .hero-button:focus {
@@ -288,8 +322,30 @@ img {
 .foto-work {
   display: flex;
 }
-.foto-work .item-work:not(:last-child) {
+.foto-work .service-item:not(:last-child) {
   margin-right: 30px;
+}
+.service-item {
+  position: relative;
+}
+.servise-title {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 70px;
+  margin: 0;
+  left: 0;
+  bottom: 0;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  justify-content: center;
+  align-items: center;
+  color: var(--white-text-color);
+  background-color: rgba(47, 48, 58, 0.8);
 }
 
 /* Наша команда */
@@ -318,6 +374,7 @@ img {
   line-height: 1.19;
   text-align: center;
   margin-bottom: 10px;
+  letter-spacing: 0.03em;
 }
 .position {
   margin-bottom: 16px;
@@ -341,6 +398,10 @@ img {
   width: 44px;
   height: 44px;
   color: var(--icon-color);
+  border-radius: 50%;
+  transition-property: background-color, border-radius, color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .link-icon:hover,
 .link-icon:focus {
@@ -370,6 +431,9 @@ img {
   color: var(--icon-color);
   border: 1px solid;
   border-radius: 4px;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .client-item:not(:last-child) {
   margin-right: 30px;
@@ -414,9 +478,13 @@ img {
 .logo-white {
   color: var(--white-text-color);
 }
-.footer-address {
+.footer-address,
+.footer-address:visited {
   color: var(--white-text-color);
   text-decoration: none;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-item {
   display: block;
@@ -430,6 +498,11 @@ img {
   font-weight: 400;
   line-height: 1.71;
   color: var(--footer-email-tel-color);
+}
+.footer-contact {
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-address:hover,
 .footer-address:focus,
@@ -460,6 +533,9 @@ img {
   color: var(--white-text-color);
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
+  transition-property: background-color, border-radius, color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .join .link-icon:hover,
@@ -494,8 +570,12 @@ img {
 
   cursor: pointer;
   border-radius: 4px;
-  border: 0;
+  border: none;
   padding: 6px 22px;
+
+  transition-property: color, background-color, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .filter-button:hover,
 .filter-button:focus {
@@ -504,7 +584,7 @@ img {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
 
-  border: 0;
+  border: none;
   border-radius: 4px;
 }
 .portfolio-project {
@@ -519,17 +599,45 @@ img {
   flex-basis: calc((100% - 60px) / 3);
   margin-right: 30px;
   margin-bottom: 30px;
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-card:nth-child(3n) {
   margin-right: 0;
 }
-
 .portfolio-card:nth-last-child(-n + 3) {
   margin-bottom: 0;
 }
-
 .project-img {
   display: block;
+}
+.thunb {
+  position: relative;
+  overflow: hidden;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(100%);
+  transition-property: transform;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 63px 24px;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  opacity: 0;
+  color: var(--white-text-color);
+  background: rgba(33, 150, 243, 0.9);
+}
+.project-link:hover .overlay,
+.project-link:focus .overlay {
+  transform: translatey(0);
+  opacity: 1;
 }
 .project-link {
   text-decoration: none;
