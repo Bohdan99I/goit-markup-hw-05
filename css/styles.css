@@ -706,6 +706,11 @@ img {
   border-radius: 50%;
   display: flex;
 }
+.close:hover,
+.close:focus {
+  border: 1px solid var(--accent-color);
+  fill: var(--accent-color);
+}
 .icon-close {
   margin: auto;
   width: 18px;
