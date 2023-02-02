@@ -17,15 +17,11 @@
   --button-active-bg: #188ce8;
   --header-border: #ececec;
   --footer-email-tel-color: rgba(255, 255, 255, 0.6);
+  --transition-cubic: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ------------BODY----------------- */
 body {
-  display: block;
-  width: 1600px;
-  margin-left: auto;
-  margin-right: auto;
-
   font-size: 14px;
   font-family: "Roboto", sans-serif;
   letter-spacing: 0.03em;
@@ -161,9 +157,7 @@ img {
   letter-spacing: 0.02em;
 
   color: var(--primary-text-color);
-  transition-property: color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms var(--transition-cubic);
 }
 .header-contacts {
   display: flex;
@@ -184,8 +178,8 @@ img {
   text-decoration: none;
 
   color: var(--secondary-text-color);
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms var(--transition-cubic),
+    fill 250ms var(--transition-cubic);
 }
 .icon {
   fill: currentColor;
@@ -194,9 +188,7 @@ img {
   padding: 0;
   margin-bottom: 0;
   /* align-items: center; */
-  transition-property: color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms var(--transition-cubic);
 }
 .icon:hover,
 .icon:focus {
@@ -213,13 +205,12 @@ img {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--accent-color);
-  transition-property: color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms var(--transition-cubic);
 }
 
 /* Стилізація героя */
 .hero {
+  margin: 0 auto;
   max-width: 1600px;
   text-align: center;
   padding: 200px 0;
@@ -255,9 +246,7 @@ img {
   border: none;
   background-color: var(--accent-color);
   color: var(--white-text-color);
-  transition-property: background-color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms var(--transition-cubic);
 }
 .hero-button:hover,
 .hero-button:focus {
@@ -400,14 +389,12 @@ img {
   height: 44px;
   color: var(--icon-color);
   border-radius: 50%;
-  transition-property: background-color, border-radius, color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms var(--transition-cubic),
+    color 250ms var(--transition-cubic);
 }
 .link-icon:hover,
 .link-icon:focus {
   background-color: var(--accent-color);
-  border-radius: 50%;
   color: var(--white-text-color);
 }
 .icon-team {
@@ -432,9 +419,8 @@ img {
   border: 1px solid;
   border-radius: 4px;
   color: var(--icon-color);
-  transition-property: color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border 250ms var(--transition-cubic),
+    color 250ms var(--transition-cubic);
 }
 .client-item:not(:last-child) {
   margin-right: 30px;
@@ -483,9 +469,7 @@ img {
 .footer-address:visited {
   color: var(--white-text-color);
   text-decoration: none;
-  transition-property: color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms var(--transition-cubic);
 }
 .footer-item {
   display: block;
@@ -501,9 +485,7 @@ img {
   color: var(--footer-email-tel-color);
 }
 .footer-contact {
-  transition-property: color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms var(--transition-cubic);
 }
 .footer-address:hover,
 .footer-address:focus,
@@ -511,11 +493,12 @@ img {
 .footer-contact:focus {
   color: var(--accent-color);
 }
+
+/* Приєднуйтесь */
 .join {
   display: flex;
   flex-direction: column;
 }
-
 .join-p {
   text-transform: uppercase;
   font-weight: 700;
@@ -529,20 +512,16 @@ img {
   padding-left: 0;
   padding-right: 0;
 }
-
 .join .link-icon {
   color: var(--white-text-color);
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
-  transition-property: background-color, border-radius, color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms var(--transition-cubic),
+    color 250ms var(--transition-cubic);
 }
-
 .join .link-icon:hover,
 .join .link-icon:focus {
   background-color: var(--accent-color);
-  border-radius: 50%;
   color: var(--white-text-color);
 }
 
@@ -570,9 +549,9 @@ img {
   border: none;
   background-color: var(--team-background-color);
   color: var(--primary-text-color);
-  transition-property: color, background-color, box-shadow;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms var(--transition-cubic),
+    background-color 250ms var(--transition-cubic),
+    box-shadow 250ms var(--transition-cubic);
 }
 .filter-button:hover,
 .filter-button:focus {
@@ -580,9 +559,6 @@ img {
   background-color: var(--accent-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
-
-  border: none;
-  border-radius: 4px;
 }
 .portfolio-project {
   display: flex;
@@ -594,9 +570,7 @@ img {
   flex-basis: calc((100% - 60px) / 3);
   margin-right: 30px;
   margin-bottom: 30px;
-  transition-property: box-shadow;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 250ms var(--transition-cubic);
 }
 .portfolio-card:nth-child(3n) {
   margin-right: 0;
@@ -618,14 +592,11 @@ img {
   width: 100%;
   height: 100%;
   transform: translateY(100%);
-  transition-property: transform;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms var(--transition-cubic);
   padding: 63px 24px;
   font-size: 18px;
   line-height: 1.56;
   letter-spacing: 0.03em;
-  opacity: 0;
   color: var(--white-text-color);
   background: rgba(33, 150, 243, 0.9);
 }
@@ -674,7 +645,7 @@ img {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 1;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms var(--transition-cubic);
 }
 .backdrop.is-hidden {
   opacity: 0;
@@ -691,7 +662,7 @@ img {
   width: 528px;
   height: 581px;
   background-color: var(--primary-white-color);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms var(--transition-cubic);
 }
 .close {
   position: absolute;
@@ -699,13 +670,14 @@ img {
   right: 8px;
   width: 30px;
   height: 30px;
+  background-color: var(--primary-white-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   display: flex;
+  transition: fill 250ms var(--transition-cubic);
 }
 .close:hover,
 .close:focus {
-  border: 1px solid var(--accent-color);
   fill: var(--accent-color);
 }
 .icon-close {
@@ -714,4 +686,5 @@ img {
   height: 18px;
   right: 50%;
   align-items: center;
+  cursor: pointer;
 }
